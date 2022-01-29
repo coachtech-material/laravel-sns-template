@@ -24,25 +24,9 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        $image = $request->file('image');
-        $path = $image->store('public/post_images');
-
-        Post::create([
-            'user_id' => Auth::id(),
-            'content' => $request->content,
-            'image' => basename($path)
-        ]);
-
-        return redirect('/');
     }
 
     public function destroy(Request $request)
     {
-        $post = Post::find($request->post_id);
-
-        Storage::disk('public')->delete('post_images/' . $post->image);
-        $post->delete();
-
-        return back();
     }
 }
