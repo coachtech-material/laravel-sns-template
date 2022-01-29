@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('all_users_likes')->orderBy('created_at', 'desc')->paginate(10);
+        $posts = Post::with(['all_users_likes', 'users_comments'])->orderBy('created_at', 'desc')->paginate(10);
 
         return view('post/index', compact('posts'));
     }
