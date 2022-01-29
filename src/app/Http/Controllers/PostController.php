@@ -43,6 +43,6 @@ class PostController extends Controller
         Storage::disk('public')->delete('post_images/' . $post->image);
         $post->delete();
 
-        return redirect('/')->with('message', '投稿を削除しました');
+        return back();
     }
 }

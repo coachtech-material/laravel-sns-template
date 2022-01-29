@@ -11,9 +11,9 @@ class CommentController extends Controller
 {
     public function store(CommentRequest $request)
     {
-        $reservation = $request->only(['post_id', 'comment']);
-        $reservation['user_id'] = Auth::id();
-        Comment::create($reservation);
+        $comment = $request->only(['post_id', 'comment']);
+        $comment['user_id'] = Auth::id();
+        Comment::create($comment);
 
         return back()->with('message', 'コメントを作成しました');
     }
