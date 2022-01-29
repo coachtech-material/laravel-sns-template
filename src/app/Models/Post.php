@@ -33,6 +33,6 @@ class Post extends Model
 
     public function users_comments()
     {
-        return $this->belongsToMany(User::class, 'comments')->withPivot('id', 'comment');
+        return $this->belongsToMany(User::class, 'comments')->withPivot('id', 'user_id', 'comment');
     }
 }

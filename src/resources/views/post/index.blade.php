@@ -30,7 +30,18 @@
                         <img class="card__img" alt="投稿画像" src="{{ asset('storage/post_images/' . $post['image']) }}">
                     </div>
                     <div class="card__body">
-                        <h3 class="card__title">{{ $post['user']['name'] }}</h3>
+                        <div class="card__heading">
+                            <h3 class="card__title">{{ $post['user']['name'] }}</h3>
+                            <form class="delete-form" action="/posts/{{ $post['id'] }}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                <div class="delete-form__button">
+                                    @if (Auth::id() === $post['user_id'])
+                                        <button class="delete-form__button-submit" type="submit">削除</button>
+                                    @endif
+                                </div>
+                            </form>
+                        </div>
                         <div class="card__item">
                             <div class="card__item-img">
                                 @if ($post['users_likes']->isEmpty())
@@ -56,7 +67,18 @@
                             <hr>
                             <div class="card__comments">
                                 @foreach ($post->users_comments as $user)
-                                    <div>{{ $user['name'] }}さん：{{ $user['pivot']['comment'] }}</div>
+                                    <div class="card__comments-item">
+                                        <div>{{ $user['name'] }}さん：{{ $user['pivot']['comment'] }}</div>
+                                        <form class="delete-form" action="/comments/{{ $user['pivot']['id'] }}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <div class="delete-form__button">
+                                                @if (Auth::id() === $user['pivot']['user_id'])
+                                                    <button class="delete-form__button-submit" type="submit">削除</button>
+                                                @endif
+                                            </div>
+                                        </form>
+                                    </div>
                                 @endforeach
                             </div>
                         </div>

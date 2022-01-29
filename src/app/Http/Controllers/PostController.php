@@ -6,6 +6,7 @@ use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -37,8 +38,11 @@ class PostController extends Controller
 
     public function destroy(Request $request)
     {
-        Post::find($request->post_id)->delete();
+        $post = Post::find($request->post_id);
 
-        return redirect('/');
+        Storage::disk('public')->delete('post_images/' . $post->image);
+        $post->delete();
+
+        return redirect('/')->with('message', '投稿を削除しました');
     }
 }
