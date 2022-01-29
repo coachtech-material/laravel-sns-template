@@ -1,0 +1,157 @@
+.post__alert--success {
+    padding: 10px 30px;
+    border-color: #badbcc;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.post__alert--danger {
+    padding: 10px 0;
+    border-color: #f5c2c7;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.post__alert--danger ul {
+    margin: 0;
+}
+
+.post__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 25%;
+    text-align: center;
+}
+
+.form__group {
+    margin-bottom: 5px;
+}
+
+.form__group-title {
+    text-align: left;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.form__input--text{
+    text-align: left;
+}
+
+.form__input--text input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+
+    appearance: none;
+}
+
+.form__button {
+    margin-top: 20px;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.cards {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    text-decoration: none;
+}
+
+.card__img-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.card__img {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.card__body {
+    padding: 15px;
+}
+
+.card__title {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.card__item-img {
+    display: flex;
+    align-items: center;
+}
+
+.card__item-img button {
+    padding: 0;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    appearance: none;
+}
+
+.card__item-img img {
+    width: 30px;
+}
+
+.card__item-text {
+    margin-top: 10px;
+    color: #666;
+}
+
+.card__comment-create input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.paginate {
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 0 8px;
+}
+
+.pagination a {
+    color: #0000ff;
+    text-decoration: none;
+}
